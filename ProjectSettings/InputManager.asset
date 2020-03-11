@@ -6,7 +6,7 @@ InputManager:
   serializedVersion: 2
   m_Axes:
   - serializedVersion: 3
-    m_Name: Player
+    m_Name: PlayerCharacter
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: left

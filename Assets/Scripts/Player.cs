@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-  public GameObject bullet;
+    public GameObject bullet;
     public GameObject PlayerOb;
     public float speed = 5f;
 
-  public Transform shottingOffset;
+    public Transform shottingOffset;
 
     Rigidbody2D rbp;
     public GameObject player;
@@ -52,5 +52,17 @@ public class Player : MonoBehaviour
         {
             rbp.velocity = Vector3.zero;
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D trig)
+    {
+        if (trig.gameObject.tag == "Bullet2")
+        {
+            Destroy(trig.gameObject);
+            Destroy(gameObject);
+        }
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene("CreditScene");
+
     }
 }

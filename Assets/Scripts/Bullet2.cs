@@ -22,10 +22,21 @@ public class Bullet2 : MonoBehaviour
       Debug.Log("Wwweeeeee");
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D trig)
     {
-        Destroy(gameObject);
-        Destroy(gameObject);
-        Debug.Log("PEW!");
+        if (trig.gameObject.tag == "Shield")
+        {
+            Destroy(gameObject);
+            Destroy(trig.gameObject);
+            Debug.Log("PEW!");
+        }
+
+        if (trig.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+            Destroy(trig.gameObject);
+            Debug.Log("PEW!");
+        }
+
     }
 }
